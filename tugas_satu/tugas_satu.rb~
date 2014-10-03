@@ -1,0 +1,62 @@
+class Player
+attr_accessor :blood, :manna, :name
+def initialize (name)
+@blood=100
+@manna=40
+@name=name
+end
+end
+
+
+def menu (nama_pemain, j)
+@nama_pemain = nama_pemain
+@j=j
+
+player=Array.new
+player[j]= Player.new nama_pemain
+
+puts "#===========================================#"
+puts  "#         welcome to battle arena           #"
+puts "#-------------------------------------------#"
+puts "#Description:                               #"
+puts '#1. Ketik "new" untuk membuat karakter      #'
+puts '#2. Ketik "start" untuk memulai pertarungan #'
+puts '#-------------------------------------------#'
+puts '#Current Player:                            #'
+puts "#  #{player[j].name}                           #"
+
+puts '# *max player 2 atau 3                      #'
+puts '#-------------------------------------------#'
+
+
+
+pil=gets.chomp
+
+
+if pil== "new" 
+puts "masukan nama player"
+nama=gets
+puts "nama saya adalah #{player[j].name}"
+puts "darah : #{player[j].blood}"
+j=j+1
+
+
+puts j
+menu nama,j
+
+
+elsif pil== "start"
+puts player[j].name
+puts player[j].blood
+menu player[j].manna
+else
+puts "pilihan salah"
+end
+end
+
+
+menu "-",0
+
+
+
+
